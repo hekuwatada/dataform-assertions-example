@@ -18,3 +18,17 @@ docker/build:
 docker/run:
 	@echo "\n== docker/run\n"
 	docker run -it --rm --mount src="$$(pwd)",target=/workspaces,type=bind --entrypoint /bin/bash $(DOCKER_IMAGE_TAG) 
+
+##############################
+# Dev utilities
+##############################
+# create the project structure
+.PHONY: dev/create-project
+dev/create-project:
+	@echo "\n== dev/create-project\n"
+	mkdir -p definitions
+	mkdir -p includes
+	touch dataform.json
+	touch environments.json
+	touch package.json
+	touch schedules.json
