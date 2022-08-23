@@ -15,7 +15,7 @@ make docker/build
 make docker/run
 
 # Run dataform --version in the container
-# The current directry is mounted as /workspace
+# The current directry is mounted as /workspaces
 ```
 
 ## How to run Dataform CLI locally (VSCode)
