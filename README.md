@@ -3,11 +3,21 @@
 This repo is to explore use of Dataform assertions to add data quality checks for existing tables.
 
 ## Tasks
-- [ ] Add Dockerfile to run Dataform CLI
-- [ ] Add assertions
+
+- [x] Add Dockerfile to run Dataform CLI
+- [ ] Add devcontainer.json for VSCode (WIP)
+- [x] Add assertions
 - [ ] Have assertions executed regularly
 
-## How to run Dataform CLI locally (Docker)
+## How to run assertions locally
+
+```
+make dataform/test
+```
+
+## Apendix
+
+### How to run Dataform CLI locally (Docker)
 ```
 make docker/build
 
@@ -18,14 +28,14 @@ make docker/run
 # The current directry is mounted as /workspaces
 ```
 
-## How to run Dataform CLI locally (VSCode)
+### How to run Dataform CLI locally (VSCode)
+
 1. Open the project in Container
 2. Open Terminal to entre the container
 3. Run `dataform --version`
 
-## Apendix
-
 ### How this Dataform project was created
+
 1. Set BQ_GCP_PROJECT_ID environment variable to your GCP project ID
 2. Run `dataform init dataform` in the container
 ```
