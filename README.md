@@ -23,5 +23,14 @@ make docker/run
 2. Open Terminal to entre the container
 3. Run `dataform --version`
 
-## References
+## Apendix
+
+### How this Dataform project was created
+1. Set BQ_GCP_PROJECT_ID environment variable to your GCP project ID
+2. Run `dataform init` in the container
+```
+make dev/create-project
+```
+
+### References
 - https://docs.dataform.co/guides/assertions
