@@ -8,6 +8,7 @@ This repo is to explore use of Dataform assertions to add data quality checks fo
 - [ ] Add devcontainer.json for VSCode (WIP)
 - [x] Add assertions
 - [ ] Have assertions executed regularly
+- [ ] Add scripts to create the SUT table
 
 ## How to run assertions locally
 
