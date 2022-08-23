@@ -3,6 +3,7 @@ SHELL := /bin/bash
 .SHELLFLAGS := -o pipefail -euc
 
 DOCKER_IMAGE_TAG = 'dataform-local'
+DATAFORM_DIR = 'dataform'
 
 ##############################
 # Docker
@@ -22,7 +23,7 @@ docker/run:
 .PHONY: docker/dataform
 docker/dataform:
 	@echo "\n== docker/dataform\n"
-	docker run -it --rm --mount src="$$(pwd)",target=/workspaces,type=bind -w /workspaces $(DOCKER_IMAGE_TAG) $(ARGS)
+	docker run -it --rm --mount src="$$(pwd)",target=/workspaces,type=bind -w /workspaces/$(DATAFORM_DIR) $(DOCKER_IMAGE_TAG) $(ARGS)
 
 ##############################
 # Dev utilities
@@ -33,16 +34,16 @@ docker/dataform:
 dev/create-project:
 	@echo "\n== BQ_GCP_PROJECT_ID=<your GCP project ID> dev/create-project\n"
 	$(MAKE) docker/dataform ARGS="init bigquery --default-database ${BQ_GCP_PROJECT_ID} --default-location EU --include-schedules true --include-environments true"
-	touch definitions/.gitkeep
-	touch includes/.gitkeep
+	touch $(DATAFORM_DIR)/definitions/.gitkeep
+	touch $(DATAFORM_DIR)/includes/.gitkeep
 
 .PHONY: dev/delete-project
 dev/delete-project:
 	@echo $@
 	@echo "\n== dev/delete-project\n"
-	rm -rf definitions
-	rm -rf includes
-	rm -f dataform.json
-	rm -f environments.json
-	rm -f package*.json
-	rm -f schedules.json
+	rm -rf $(DATAFORM_DIR)/definitions
+	rm -rf $(DATAFORM_DIR)/includes
+	rm -f $(DATAFORM_DIR)/dataform.json
+	rm -f $(DATAFORM_DIR)/environments.json
+	rm -f $(DATAFORM_DIR)/package*.json
+	rm -f $(DATAFORM_DIR)/schedules.json
