@@ -1,0 +1,5 @@
+config {
+  type: "declaration",
+  schema: "dbt_example",
+  name: "my_first_dbt_model"
+}
