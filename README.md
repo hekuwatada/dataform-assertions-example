@@ -16,9 +16,11 @@ This repo is to explore use of Dataform assertions to add data quality checks fo
 make dataform/test
 ```
 
-## Apendix
 
-### How to run Dataform CLI locally (Docker)
+## Appendix
+
+###  How to run Dataform CLI locally (Docker)
+
 ```
 make docker/build
 
