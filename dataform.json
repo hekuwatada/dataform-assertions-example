@@ -1,0 +1,8 @@
+{
+    "warehouse": "bigquery",
+    "defaultSchema": "dataform",
+    "assertionSchema": "dataform_assertions",
+    "defaultDatabase": "BQ_GCP_PROJECT_ID",
+    "useRunCache": false,
+    "defaultLocation": "EU"
+}
