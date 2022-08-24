@@ -9,13 +9,23 @@ This repo is to explore use of Dataform assertions to add data quality checks fo
 - [x] Add assertions
 - [ ] Have assertions executed regularly
 - [ ] Add scripts to create the SUT table
+- [ ] Make tests run and alert on failure
 
 ## How to run assertions locally
 
+Below make target runs dataform assertions in a container:
 ```
 make dataform/test
 ```
 
+Alternatively, run `dataform` directly in a container:
+```
+# entre the container
+make docker/run
+
+# in /workspaces/dataform directory in the container
+dataform run
+```
 
 ## Appendix
 
